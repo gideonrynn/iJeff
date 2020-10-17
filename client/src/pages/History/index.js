@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ListHistory from "../../components/ListHistory"
+import ListHistory from "../../components/HistoryList"
 // import API from "../../utils/API"
 
 function History() {

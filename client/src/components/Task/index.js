@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from "react";
-// import API from "../../utils/API"
+// import { Tabs, Tab } from "react-bootstrap"
+import {Grommet, Button } from "grommet"
+import TaskAPI from "../../utils/taskAPI"
+
 
 function Task() {
 
-    // const [state, setNewState] = useState({});
+    const [tasks, setTasks] = useState({});
 
-    // useEffect(() => {}, []);
+    useEffect(() => {
+        loadTasks();
+    }, []);
+
+    function loadTasks() {
+        TaskAPI.getAllTasks()
+            .then(res => {
+                const tasks = res.data
+                setTasks(tasks)
+                console.log(tasks)
+            })
+            .catch(err => console.log(err));
+    }
 
     return (
         <div>
-            This is a task
+            <p>Task Component</p>
+               <Grommet className="App">
+                    <Button primary label="label" />
+                </Grommet>
         </div>
     );
 
