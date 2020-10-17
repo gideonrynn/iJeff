@@ -1,5 +1,5 @@
 {
-  "name": "jeffer",
+  "name": "jeff",
   "version": "1.0.0",
   "description": "fish care app",
   "main": "server.js",
@@ -31,7 +31,7 @@
   "author": "sarah dillard",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gideonrynn/jeffer/issues"
+    "url": "https://github.com/gideonrynn/jeff/issues"
   },
-  "homepage": "https://github.com/gideonrynn/jeffer#readme"
+  "homepage": "https://github.com/gideonrynn/jeff#readme"
 }
