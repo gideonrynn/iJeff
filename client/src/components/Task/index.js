@@ -4,33 +4,20 @@ import {Grommet, Button } from "grommet"
 import TaskAPI from "../../utils/taskAPI"
 
 
-function Task() {
+function Tabs() {
 
-    const [tasks, setTasks] = useState({});
+    // const [tasks, setTasks] = useState({});
 
-    useEffect(() => {
-        loadTasks();
-    }, []);
-
-    function loadTasks() {
-        TaskAPI.getAllTasks()
-            .then(res => {
-                const tasks = res.data
-                setTasks(tasks)
-                console.log(tasks)
-            })
-            .catch(err => console.log(err));
-    }
+    // useEffect(() => {
+  
+    // }, []);
 
     return (
-        <div>
-            <p>Task Component</p>
-               <Grommet className="App">
-                    <Button primary label="label" />
-                </Grommet>
-        </div>
+        <>
+    
+        </>
     );
 
 }
 
-export default Task;
+export default Nav;
