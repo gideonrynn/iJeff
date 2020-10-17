@@ -1,13 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+// import { deepMerge } from 'grommet/utils';
 import Main from "../../components/Main"
 // import API from "../../utils/API"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarAlt, faTasks, faHistory, faFish } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
 
     const [sidebar, setSidebar] = useState(true);
+
+    // const customFocus = deepMerge(grommet, {
+    //     global: {
+    //       colors: {
+    //         focus: 'neutral-3',
+    //       },
+    //     },
+    //   });
 
     // useEffect(() => {}, []);
 
@@ -52,13 +62,29 @@ function Home() {
                             { type: 'slideRight', size: 'xlarge', duration: 150 },
                             ]}
                         >
-                            {['Status', 'Schedule', 'History', 'Links'].map(name => (
-                                <Button key={name} href="https://www.youtube.com/watch?v=t8LD0iUYv80" hoverIndicator>
+                            {/* {['Status', 'Schedule', 'History', 'Links'].map(name => ( */}
+                                <Button href="#" hoverIndicator>
                                     <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
-                                        <Text>{name}</Text>
+                                        <Text><FontAwesomeIcon icon={faFish} size="2x" /></Text>
                                     </Box>
                                 </Button>
-                            ))}
+                            {/* ))} */}
+
+                            <Button href="#" hoverIndicator>
+                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
+                                    <Text><FontAwesomeIcon icon={faCalendarAlt} size="2x" /></Text>
+                                </Box>
+                            </Button>
+                            <Button href="#" hoverIndicator>
+                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
+                                    <Text><FontAwesomeIcon icon={faTasks} size="2x" /></Text>
+                                </Box>
+                            </Button>
+                            <Button href="#" hoverIndicator>
+                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
+                                    <Text><FontAwesomeIcon icon={faHistory} size="2x" /></Text>
+                                </Box>
+                            </Button>
 
                         </Box>
                     )}
@@ -83,12 +109,5 @@ function Home() {
 
 }
 
-const customFocus = deepMerge(grommet, {
-    global: {
-      colors: {
-        focus: 'neutral-3',
-      },
-    },
-  });
 
 export default Home;

@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import { Tabs, Tab } from "react-bootstrap"
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'grommet';
+import { Box, Grommet, Tab, Tabs, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
-import PropTypes from 'prop-types';
+import Task from '../../components/Task'
 import TaskAPI from "../../utils/taskAPI"
 
 
 function StatusTabs() {
 
     const [tasks, setTasks] = useState({});
-
-    const RichTabTitle = ({ icon, label }) => (
-        <Box direction="row" align="center" gap="xsmall" margin="xsmall">
-        {icon}
-        <Text size="small">
-            <strong>{label}</strong>
-        </Text>
-        </Box>
-    );
 
     useEffect(() => {
         loadTasks();
@@ -33,23 +23,49 @@ function StatusTabs() {
             .catch(err => console.log(err));
     }
 
+    const RichTabTitle = ({ icon, label }) => (
+        <Box direction="row" align="center" gap="xsmall" margin="xsmall">
+        {icon}
+        <Text size="small">
+            <strong>{label}</strong>
+        </Text>
+        </Box>
+    );
+
+
     return (
         <>
-            <Grommet theme={grommet}>
-                <Tabs>
-                    <Tab
-                        title={<RichTabTitle label="Goldfish" />}
-                    >
-                    </Tab>
+            <Box
+                height="medium"
+            >
+                <Grommet theme={grommet}>
+                    <Tabs>
+                        <Tab
+                            title={<RichTabTitle label="Goldfish" />}
+                        >
+                            <Task task={tasks}/>
+                        </Tab>
 
-                    <Tab
-                        title={<RichTabTitle label="Platys" />}
-                    >   
-                    </Tab>
+                        <Tab
+                            title={<RichTabTitle label="Platys" />}
+                        >   
+                            <Text>
+                                Change water<br></br>
+                                Clean glass<br></br>
+                                Clean glass<br></br>
+                                Vaccuum substrate<br></br>
+                                Clean decorations<br></br>
+                                Boil airstones<br></br>
+                                Clean and replace filters<br></br>
+                                Clean hood<br></br>
+                                Test water and record results<br></br>
+                            </Text>
+                        </Tab>
+                        
+                    </Tabs>
                     
-                </Tabs>
-
-            </Grommet>
+                </Grommet>
+            </Box>
         </>
     );
 

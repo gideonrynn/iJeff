@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ListHistory from "../../components/HistoryList"
 // import API from "../../utils/API"
 

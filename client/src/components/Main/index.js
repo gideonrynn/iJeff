@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Grommet, Box, Grid } from 'grommet';
 import { grommet } from 'grommet/themes';
 import StatusTabs from "../StatusTabs"
@@ -8,13 +8,8 @@ import FishState from "../../components/FishState"
 
 function Main() {
 
-    // const [tasks, setTasks] = useState({});
-
-    // useEffect(() => {
-  
-    // }, []);
-
     return (
+
       <Grommet theme={grommet}>
         
         <Grid columns="large" gap="large">
