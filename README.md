@@ -1,5 +1,5 @@
-# jeff
-Fish care upkeep repository using Node, Sequelize, Express
+# iJeff
+Fish care upkeep repository using Node, Sequelize, Express, Grommet
 
 
 # Setup
