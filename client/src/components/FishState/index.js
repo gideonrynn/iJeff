@@ -2,7 +2,7 @@ import React from "react";
 // import React, { useEffect, useState } from "react";
 import fish from '../../images/fish1.jpg'
 // import fisho from '../../images/fish2.jpg'
-import {Grommet, Box } from "grommet"
+import { Box } from "grommet"
 // import TaskAPI from "../../utils/taskAPI"
 
 

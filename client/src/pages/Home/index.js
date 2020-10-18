@@ -62,6 +62,11 @@ function Home() {
                             { type: 'slideRight', size: 'xlarge', duration: 150 },
                             ]}
                         >
+                             <Button href="#" hoverIndicator>
+                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
+                                    <Text><FontAwesomeIcon icon={faTasks} size="2x" /></Text>
+                                </Box>
+                            </Button>                           
                             {/* {['Status', 'Schedule', 'History', 'Links'].map(name => ( */}
                                 <Button href="#" hoverIndicator>
                                     <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
@@ -75,11 +80,7 @@ function Home() {
                                     <Text><FontAwesomeIcon icon={faCalendarAlt} size="2x" /></Text>
                                 </Box>
                             </Button>
-                            <Button href="#" hoverIndicator>
-                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
-                                    <Text><FontAwesomeIcon icon={faTasks} size="2x" /></Text>
-                                </Box>
-                            </Button>
+
                             <Button href="#" hoverIndicator>
                                 <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
                                     <Text><FontAwesomeIcon icon={faHistory} size="2x" /></Text>

@@ -7,23 +7,30 @@ import TaskAPI from "../../utils/taskAPI"
 
 function StatusTabs() {
 
-    const [tasks, setTasks] = useState({});
+    const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
         loadTasks();
     }, []);
 
     function loadTasks() {
-        TaskAPI.getAllTasks()
+
+        let tasks = "";
+        TaskAPI.getStatusNull()
             .then(res => {
-                const tasks = res.data
+                tasks = res.data
                 setTasks(tasks)
-                console.log(tasks)
+                return tasks
+            }).then(res => {
+                if (res <= 0) {
+                    console.log("You did it!")
+                }
             })
             .catch(err => console.log(err));
     }
 
-    const RichTabTitle = ({ icon, label }) => (
+   
+    const TabTitle = ({ icon, label }) => (
         <Box direction="row" align="center" gap="xsmall" margin="xsmall">
         {icon}
         <Text size="small">
@@ -41,13 +48,13 @@ function StatusTabs() {
                 <Grommet theme={grommet}>
                     <Tabs>
                         <Tab
-                            title={<RichTabTitle label="Goldfish" />}
+                            title={<TabTitle label="Goldfish" />}
                         >
-                            <Task task={tasks}/>
+                            <Task these={tasks}/>
                         </Tab>
 
                         <Tab
-                            title={<RichTabTitle label="Platys" />}
+                            title={<TabTitle label="Platys" />}
                         >   
                             <Text>
                                 Change water<br></br>
