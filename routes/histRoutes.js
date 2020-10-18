@@ -6,7 +6,7 @@ router.get('/all', (req, res) => {
     db.History.findAll({
       include: {
         model: db.Task,
-        attributes: ['description']
+        attributes: ['description', 'tank']
       }
     })
       .then(history => res.json(history))

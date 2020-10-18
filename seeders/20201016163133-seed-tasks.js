@@ -6,6 +6,7 @@ module.exports = {
      await queryInterface.bulkInsert('Tasks', [
        {
         description: 'Water change',
+        tank: '1',
         status: '',
         interim: 7,
         createdAt: new Date(),
@@ -13,6 +14,7 @@ module.exports = {
       },
       {
         description: 'Scrub decorations',
+        tank: '2',
         status: '',
         interim: 30,
         createdAt: new Date(),
@@ -20,6 +22,15 @@ module.exports = {
       },
       {
         description: 'Boil airstones',
+        tank: '1',
+        status: '',
+        interim: 30,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        description: 'Boil airstones',
+        tank: '2',
         status: '',
         interim: 30,
         createdAt: new Date(),

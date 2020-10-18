@@ -8,6 +8,8 @@ import TaskAPI from "../../utils/taskAPI"
 function StatusTabs() {
 
     const [tasks, setTasks] = useState([]);
+    const [tasksT1, setTasksT1] = useState([]);
+    const [tasksT2, setTasksT2] = useState([]);
 
     useEffect(() => {
         loadTasks();
@@ -19,14 +21,34 @@ function StatusTabs() {
         TaskAPI.getStatusNull()
             .then(res => {
                 tasks = res.data
-                setTasks(tasks)
+
+                let todoT1 = tasks.filter(tasks => { 
+                    return tasks.tank === "1"
+                });
+
+                let todoT2 = tasks.filter(tasks => { 
+                    return tasks.tank === "2"
+                });
+                
+                setTasks(tasks);
+                setTasksT1(todoT1);
+                setTasksT2(todoT2);
                 return tasks
+
             }).then(res => {
                 if (res <= 0) {
                     console.log("You did it!")
                 }
             })
             .catch(err => console.log(err));
+    }
+
+    function showImage1() {
+        console.log("show Goldfish one")
+    }
+
+    function showImage2() {
+        console.log("show Platys two")
     }
 
     const TabTitle = ({ icon, label }) => (
@@ -45,32 +67,18 @@ function StatusTabs() {
                 height="medium"
             >
                 <Grommet theme={grommet}>
-                    <Tabs
-                        >
-                        <Tab
-                            title={<TabTitle label="Goldfish" />}
-                        >
-                            <Task tasks={tasks}/>
-                        </Tab>
-
-                        <Tab
-                            title={<TabTitle label="Platys" />}
-                        >   
-                            <Text>
-                                Change water<br></br>
-                                Clean glass<br></br>
-                                Clean glass<br></br>
-                                Vaccuum substrate<br></br>
-                                Clean decorations<br></br>
-                                Boil airstones<br></br>
-                                Clean and replace filters<br></br>
-                                Clean hood<br></br>
-                                Test water and record results<br></br>
-                            </Text>
-                        </Tab>
-                        
+                    <Tabs>
+                        <Box onClick={showImage1}>
+                            <Tab title={<TabTitle label="Goldfish"/>}>
+                                <Task tasks={tasksT1}/>
+                            </Tab>
+                        </Box>
+                        <Box onClick={showImage2}>
+                            <Tab title={<TabTitle label="Platys"/>}>   
+                                <Task tasks={tasksT2}/>
+                            </Tab>
+                        </Box>  
                     </Tabs>
-                    
                 </Grommet>
             </Box>
         </>

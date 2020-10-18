@@ -12,8 +12,7 @@ router.get('/statusnull', (req, res) => {
     
   db.Task.findAll({
     where: {
-      status: '',
-      status: null
+      status: [null, '']
     }
   })
     .then(tasks => res.json(tasks))

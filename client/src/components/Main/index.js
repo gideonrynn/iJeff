@@ -15,6 +15,7 @@ function Main() {
         <Grid columns="large" gap="large">
 
           <Box
+          height="small"
             direction="row-responsive"
             justify="center"
             align="center"

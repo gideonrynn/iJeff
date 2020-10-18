@@ -35,7 +35,7 @@ function HistoryList(ht) {
                 <Table caption="All History">
                     <TableHeader>
                         <TableRow>
-                        {['Task','Last Updated'].map(name => (
+                        {['Tank', 'Task','Last Updated'].map(name => (
                             <TableCell key={name} scope="col">
                                 <Text>{name}</Text>
                             </TableCell>
@@ -45,7 +45,10 @@ function HistoryList(ht) {
                     <TableBody>
                         {histories.map(histories => (
                             <TableRow key={histories.id}>
-                                <TableCell key={histories.id} scope="col">
+                                <TableCell scope="col">
+                                    <Text>{histories.Task.tank}</Text>
+                                </TableCell>
+                                <TableCell scope="col">
                                     <Text>{histories.Task.description}</Text>
                                 </TableCell>
                                 <TableCell scope="col">

@@ -6,6 +6,9 @@ module.exports = function(sequelize, DataTypes) {
         description: {
             type: DataTypes.TEXT,
         },
+        tank: {
+            type: DataTypes.TEXT,
+        },
         status: {
             type: DataTypes.TEXT
         },
