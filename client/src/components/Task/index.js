@@ -27,7 +27,7 @@ function Task(tk) {
         // console.log(currentDate)
     }
 
-    function updateTask(id) {
+    function updateStatus(id) {
 
         TaskAPI.updateTask(id,
             {
@@ -46,7 +46,7 @@ function Task(tk) {
                             {tasks.map(tasks => (
                                 <Button 
                                     key={tasks.id}
-                                    onClick={() => updateTask(tasks.id)}
+                                    onClick={() => updateStatus(tasks.id)}
                                     hoverIndicator="#6A4E90">
                                     <Box 
                                         pad={{ horizontal: 'medium', vertical: 'small' }}

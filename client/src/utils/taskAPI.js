@@ -9,10 +9,9 @@ export default {
     getStatusNull: function() {
       return axios.get("/api/tasks/statusnull");
     },
-
-    updateTask: function (id) {
-      console.log(date)
-      return axios.put("api/tasks/" + id)
+    
+    updateTask: function (id, update) {
+      return axios.put("api/tasks/" + id, update)
     }
 
     
