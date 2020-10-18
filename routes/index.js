@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const allRoutes = require("./allRoutes");
+const taskRoutes = require("./taskRoutes");
+const histRoutes = require("./histRoutes");
 
-router.use("/api/tasks", allRoutes);
+router.use("/api/tasks", taskRoutes);
+router.use("/api/history", histRoutes);
 
 module.exports = router;

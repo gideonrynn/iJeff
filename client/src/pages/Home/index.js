@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Grommet, Box, Button, Grid, Text } from 'grommet';
 import { grommet } from 'grommet/themes';
+import { Link } from 'react-router-dom'
 // import { deepMerge } from 'grommet/utils';
 import Main from "../../components/Main"
 // import API from "../../utils/API"
@@ -67,21 +68,26 @@ function Home() {
                                     <Text><FontAwesomeIcon icon={faTasks} size="2x" /></Text>
                                 </Box>
                             </Button>                           
-                            {/* {['Status', 'Schedule', 'History', 'Links'].map(name => ( */}
+                            
                                 <Button href="#" hoverIndicator>
                                     <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
                                         <Text><FontAwesomeIcon icon={faFish} size="2x" /></Text>
                                     </Box>
                                 </Button>
-                            {/* ))} */}
+                            
 
-                            <Button href="#" hoverIndicator>
-                                <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
-                                    <Text><FontAwesomeIcon icon={faCalendarAlt} size="2x" /></Text>
-                                </Box>
-                            </Button>
 
-                            <Button href="#" hoverIndicator>
+                            
+                                <Button hoverIndicator>
+                                    <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
+                                        <Link className="nav-link" style={{ color: '#FFF' }} to="/history" >
+                                            <Text><FontAwesomeIcon icon={faCalendarAlt} size="2x" /></Text>
+                                        </Link>
+                                    </Box>
+                                </Button>
+                           
+
+                            <Button href="/" hoverIndicator>
                                 <Box pad={{ horizontal: 'medium', vertical: 'medium' }}>
                                     <Text><FontAwesomeIcon icon={faHistory} size="2x" /></Text>
                                 </Box>

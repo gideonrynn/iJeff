@@ -9,13 +9,11 @@ function Task(tk) {
 
     const [tasks, setTasks] = useState([]);
 
-
     useEffect(() => {
 
         getTasks()
 
     }, [tk]);
-
 
     function getTasks() {
         let task = ""
