@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react";
 import HistoryList from "../../components/HistoryList"
 import HistoryAPI from "../../utils/histAPI"
+import MainGrid from '../../components/MainGrid'
 
 function History() {
 
     const [history, setHistory] = useState([]);
+
+    const comp = <HistoryList history={history}/>;
 
     useEffect(() => {
         loadHistory()
@@ -25,9 +28,10 @@ function History() {
     }
 
     return (
-        <div>
-            <HistoryList history={history}/>
-        </div>
+        <>
+            <MainGrid page={comp}/>
+            
+        </>
     );
 
 }

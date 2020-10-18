@@ -29,7 +29,6 @@ function StatusTabs() {
             .catch(err => console.log(err));
     }
 
-   
     const TabTitle = ({ icon, label }) => (
         <Box direction="row" align="center" gap="xsmall" margin="xsmall">
         {icon}
@@ -46,11 +45,12 @@ function StatusTabs() {
                 height="medium"
             >
                 <Grommet theme={grommet}>
-                    <Tabs>
+                    <Tabs
+                        >
                         <Tab
                             title={<TabTitle label="Goldfish" />}
                         >
-                            <Task these={tasks}/>
+                            <Task tasks={tasks}/>
                         </Tab>
 
                         <Tab

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-// import { Link } from 'react-router-dom'
 import {
     Box,
     Grommet,
@@ -11,8 +10,7 @@ import {
     Text,
   } from 'grommet';
   import { grommet } from 'grommet/themes';
-//   import { data, columns } from './data';
-// import API from "../../utils/API"
+
 
 function HistoryList(ht) {
 
